@@ -392,10 +392,10 @@
         }
         function AddToCart(){
 
-            if (document.cookie.search("NumberOfProducts=")==-1 && document.cookie.search(encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png"))!=-1){
+            if (document.cookie.search("NumberOfProducts=")==-1 && document.cookie.search(encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg"))!=-1){
                 return;
             }
-            if (document.cookie.search("NumberOfProducts=")==-1 && document.cookie.search(encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png"))==-1){   
+            if (document.cookie.search("NumberOfProducts=")==-1 && document.cookie.search(encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg"))==-1){   
 
                 sha256("numofproductsis1").then(hash => {
                     const promises = [];
@@ -403,14 +403,14 @@
                     var cookieValue2;
                     document.cookie = cookieValue1;
                     promises.push(sha256("numofproductsis1").then(hash1 => {
-                        cookieValue2 = `${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png")}=${hash1}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+                        cookieValue2 = `${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg")}=${hash1}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
                     }))
                     Promise.all(promises).then(() => {
 
                         document.cookie = cookieValue2;
                         for(let i=0;i<25;i++){
                             if (document.getElementsByClassName("imageincart")[i].src==""){
-                                document.getElementsByClassName("imageincart")[i].src = "https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png";
+                                document.getElementsByClassName("imageincart")[i].src = "https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg";
                                 document.getElementsByClassName("imageincart")[i].parentElement.getElementsByClassName("numofspecificproductincart")[0].innerHTML = "1";
                                 document.getElementsByClassName("imageincart")[i].parentElement.style.display = "inline-block";
                                 break;
@@ -454,7 +454,7 @@
                 });
                 /////////////////////////
                 promises.length = 0;
-                const regexPattern = new RegExp(`${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png")}=[0-9a-fA-F]+`);
+                const regexPattern = new RegExp(`${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg")}=[0-9a-fA-F]+`);
                 const NumberOfProductsSpecificToProduct = (document.cookie.match(regexPattern)).toString().split("=")[1].toString();
                 let cookieValue2;
                 let num1;
@@ -474,7 +474,7 @@
                     promises.length = 0;
                     promises.push(
                         sha256("numofproductsis" + (num1+1)).then(hash1 => {
-                            cookieValue2 = `${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png")}=${hash1}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+                            cookieValue2 = `${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg")}=${hash1}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
                         })
                     )
                     Promise.all(promises).then(() => {
@@ -483,7 +483,7 @@
                         var imagefound = false;
                         for(var t=0;t<25;t++){
 
-                            if (document.getElementsByClassName("imageincart")[t].src=="https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png"){
+                            if (document.getElementsByClassName("imageincart")[t].src=="https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg"){
 
                                 document.getElementsByClassName("imageincart")[t].parentElement.getElementsByClassName("numofspecificproductincart")[0].innerHTML = num1+1;
                                 imagefound = true;
@@ -494,7 +494,7 @@
 
                                 if (document.getElementsByClassName("imageincart")[i].src==""){
 
-                                    document.getElementsByClassName("imageincart")[i].src=="https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png";
+                                    document.getElementsByClassName("imageincart")[i].src=="https://raw.githubusercontent.com/BlackWolfJR/2/main/1.jpg";
                                     document.getElementsByClassName("imageincart")[i].parentElement.getElementsByClassName("numofspecificproductincart")[0].innerHTML = num1+1;
                                     break;
                                 }
