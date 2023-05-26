@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheaproSell, Buy cheap and easy!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+        body {
+            height:300vh;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+        }
+        #c1{
+            display: flex;
+            background-color: rgb(1,0,26);
+            box-shadow: 0px 1px 4px black;
+            border-radius: 0 0 3px 3px;
+            width:100%;
+            height: 93px;
+            position:fixed;
+            z-index: 2;
+        }
+        #logo{
+    
+            margin:3px 12px;
+        }
+        #Products{
+
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
+            color:white;
+            border:0px;
+            padding:5px;
+            margin:24px 15px;
+            height:25px;
+            border-radius: 8px;
+            text-shadow: 0 0 5px black;
+            transition:0.4s;
+        }
+        #Products:hover{
+
+            background-color: white;
+            color:black;
+            text-shadow: 0 0 5px black;
+        }
+        #ContactUs{
+
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
+            color:white;
+            border:0px;
+            padding:5px;
+            margin:24px 15px;
+            height:25px;
+            border-radius: 8px;
+            text-shadow: 0 0 5px black;
+            transition:0.4s;
+        }
+        #ContactUs:hover{
+
+            background-color: white;
+            color:black;
+            text-shadow: 0 0 5px black;
+        } 
+        #AboutUs{
+
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
+            color:white;
+            border:0px;
+            padding:5px;
+            margin:24px 15px;
+            height:25px;
+            border-radius: 8px;
+            text-shadow: 0 0 5px black;
+            transition:0.4s;
+        }
+        #AboutUs:hover{
+
+            background-color: white;
+            color:black;
+            text-shadow: 0 0 5px black;
+        }
+        #SearchBar{
+            font-family:Bold;
+            font-size: 19px;
+            color:black;
+            background-color: white;
+            border:0px;
+            padding:3px;
+            width: 150px;
+            height:22px;
+            margin:28px 30px;
+            transition:0.4s;
+            border-radius: 8px;
+        }
+        #SignIn{
+
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
+            color:white;
+            border:0px;
+            padding:5px;
+            height:25px;
+            margin: 24px 25px;
+            border-radius: 8px;
+            text-shadow: 0 0 5px black;
+            transition:0.4s;
+        }
+        #SignIn:hover{
+
+            background-color: white;
+            color:black;
+            text-shadow: 0 0 5px black;
+        }
+        #Cart{
+
+            background-color: white;
+            border:none;
+            border-radius: 1000px;
+            border: 9px solid white;
+            margin:3px 0;
+            right:5px;
+            position:fixed;
+            transition: 1s box-shadow
+        }
+        #Cart:hover{
+
+            box-shadow: 0 0 50px black;
+            border: 20px solid white;
+        }
+        #Cart:hover #NumberOfProductsInCart{
+
+            margin:18px 10px;
+        }
+        #NumberOfProductsInCart{
+
+            display: inline;
+            background-color: black;
+            color:white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 18px;
+            border-radius: 15px;
+            margin-top: 18px;
+            right:38px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            position:fixed;
+        }
+        #u1{
+
+            margin:137px 100px;
+            width: 80%;
+            position: absolute;
+        }
+        #product{
+
+            box-shadow:0 0 2px black;
+        }
+        #productinfo{
+
+            position: absolute;
+            width: 45%;
+            margin: 0 470px;
+            top:0px;
+        }
+        #productname{
+            
+            display: block;
+            line-height: 1.875rem;
+            font-size: 22px;
+            color:rgb(1,0,26);
+            letter-spacing: 0.2px;
+            font-weight: 550;
+            font-family: sans-serif;
+            max-height:230px;
+            overflow-y: hidden;
+        }
+        #price{
+
+            display:block;
+            color:rgb(255, 0, 0);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+        }
+        #AddToCart{
+
+
+            margin-top: 5px;
+            color: rgb(1,0,26);
+            padding:2px 0;
+            font-size: 15px;
+            width:100%;
+            font-family:Bold;
+            font-size: 21px;
+            background-color: rgb(1, 0, 26);
+            color: white;
+            border:1px solid black;
+            box-shadow: 0px 1px 2px black;
+            text-align: center;
+            border-radius: 8px;
+            transition:0.4s text-shadow, 0.6s box-shadow;
+        }
+        #AddToCart:hover{
+
+            color: white;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 15px rgb(1, 0, 26);
+        }
+        #Buy{
+
+            margin-top:6px;
+            color: rgb(1,0,26);
+            padding:2px 0;
+            font-size: 15px;
+            width:100%;
+            font-family:Bold;
+            font-size: 21px;
+            background-color: rgb(1, 0, 26);
+            color: white;
+            border:1px solid black;
+            box-shadow: 0px 1px 2px black;
+            text-align: center;
+            border-radius: 8px;
+            transition:0.4s text-shadow, 0.6s box-shadow;
+        }
+        #Buy:hover{
+
+            color: white;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 15px rgb(1, 0, 26);
+        }
+        #container{
+
+            position: absolute;
+            width:65px;
+            margin:137px 17px;
+            box-shadow:0 0 5px black;
+            transition: 0.5s;
+        }
+        #container:hover{
+
+            box-shadow:0 0 10px black;
+        }
+        #img1:hover{
+
+            border:1px solid rgb(1,0,26);
+        }
+        #img2:hover{
+
+            border:1px solid rgb(1,0,26);
+        }
+        #img3:hover{
+
+            border:1px solid rgb(1,0,26);
+        }  
+        #img4:hover{
+
+            border:1px solid rgb(1,0,26);
+        }  
+        #img5:hover{
+
+            border:1px solid rgb(1,0,26);
+        }  
+        #img6:hover{
+
+            border:1px solid rgb(1,0,26);
+        }  
+        #img7:hover{
+
+            border:1px solid rgb(1,0,26);
+        }  
+        #img8:hover{
+
+            border:1px solid rgb(1,0,26);
+        }
+        #u2{
+
+            width: 80%;
+            position: absolute;
+            margin: 590px 100px;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            const promises = [];
+            if (document.cookie.search("NumberOfProducts=")==-1){
+                return;
+            }
+            if (document.cookie.search("https")!=-1){
+                const httpsincookies= (document.cookie.match(/https[^;]+/g));
+                const class1 = document.getElementsByClassName("productincart");
+                let found;
+                async function runcheck(){
+                    console.log(httpsincookies.length);
+                    for (let p=0;p<httpsincookies.length;p++){
+                        for (let i=0;i<class1.length;i++){
+                            if (class1[i].getElementsByClassName("imageincart")[0].src==window.location.href){
+                                for (let ii = 1; ii <= 25; ii++) {
+                                    await sha256("numofproductsis" + ii).then(hash => {
+                                        if (hash.toString()==(httpsincookies[p].toString()).split("=")[1].toString()) {
+                                            class1[i].getElementsByClassName("imageincart")[0].src = (decodeURIComponent(httpsincookies[p].toString().split("=")[0].toString())).toString();
+                                            class1[i].getElementsByClassName("numofspecificproductincart")[0].innerHTML = ii;
+                                            class1[i].style.display = "inline-block";
+                                            found = true;
+                                        }
+                                    })
+                                    if (found){
+                                        break;
+                                    }
+                                } 
+                                if (found){
+                                    break;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+                runcheck();
+            }
+            const NumberOfProductsInCart = (document.cookie.match(/NumberOfProducts=[0-9a-fA-F]+/).toString()).split("=")[1].toString();
+            var found;
+            var num;
+            promises.length = 0;
+            for (let i = 1; i <= 25; i++) {
+                promises.push(
+                    sha256("numofproductsis" + i).then(hash => {
+                        if (hash.toString()==NumberOfProductsInCart.toString()) {
+                            found = true;
+                            num = i;
+                        }
+                    })
+                )
+            }
+            Promise.all(promises).then(() => {
+
+                if (found==true){
+                    document.getElementById("NumberOfProductsInCart").innerHTML = num;
+                }
+            })
+        })
+        function sha256(input) { //// hash func
+                const encoder = new TextEncoder();  
+                const data = encoder.encode(input);
+                return crypto.subtle.digest('SHA-256', data).then(buffer => {
+                    const hashArray = Array.from(new Uint8Array(buffer));
+                    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+                    return hashHex;
+                });
+        } ////
+        function changeimage1(){
+
+            let imageproduct = document.getElementById("product");
+            imageproduct.style="width:452px;height:435px;";
+            imageproduct.src = "1.jpg";
+        }
+        function changeimage2(){
+
+            let imageproduct = document.getElementById("product");
+            imageproduct.style="width:452px;height:435px;";
+            imageproduct.src = "2.jpg";
+        }
+        function changeimage3(){
+
+            let imageproduct = document.getElementById("product");
+            imageproduct.style="width:452px;height:435px;";
+            imageproduct.src = "3.jpg";
+        }
+        function changeimage4(){
+
+            let imageproduct = document.getElementById("product");
+            imageproduct.style="width:452px;height:435px;";
+            imageproduct.src = "4.jpg";
+        }
+        function changeimage5(){
+
+            let imageproduct = document.getElementById("product");
+            imageproduct.style="width:452px;height:435px;";
+            imageproduct.src = "5.jpg";
+        }
+        function changeimage6(){
+
+            let imageproduct = document.getElementById("product");
+            imageproduct.style="width:452px;height:435px;";
+            imageproduct.src = "6.jpg";
+        }
+        function AddToCart(){
+
+            if (document.cookie.search("NumberOfProducts=")==-1 && document.cookie.search(encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png"))!=-1){
+                return;
+            }
+            if (document.cookie.search("NumberOfProducts=")==-1 && document.cookie.search(encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png"))==-1){   
+
+                sha256("numofproductsis1").then(hash => {
+                    const promises = [];
+                    const cookieValue1 = `NumberOfProducts=${hash}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+                    var cookieValue2;
+                    document.cookie = cookieValue1;
+                    promises.push(sha256("numofproductsis1").then(hash1 => {
+                        cookieValue2 = `${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png")}=${hash1}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+                    }))
+                    Promise.all(promises).then(() => {
+
+                        document.cookie = cookieValue2;
+                        for(let i=0;i<25;i++){
+                            if (document.getElementsByClassName("imageincart")[i].src==""){
+                                document.getElementsByClassName("imageincart")[i].src = "https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png";
+                                document.getElementsByClassName("imageincart")[i].parentElement.getElementsByClassName("numofspecificproductincart")[0].innerHTML = "1";
+                                document.getElementsByClassName("imageincart")[i].parentElement.style.display = "inline-block";
+                                break;
+                            }
+                        }
+                        document.getElementById("NumberOfProductsInCart").innerHTML = "1";
+                    })
+                });
+                return;
+            }
+            const NumberOfProductsInCart = (document.cookie.match(/NumberOfProducts=[0-9a-fA-F]+/).toString()).split("=")[1].toString();
+            let NumberOfProductsInCart1 = document.getElementById("NumberOfProductsInCart");
+            let found;
+            let num;
+            const promises = [];
+            for (let i = 1; i <= 25; i++) {
+                promises.push(
+                    sha256("numofproductsis" + i).then(hash => {
+                        if (hash.toString() === NumberOfProductsInCart.toString()) {
+                            found = true;
+                            num = i;
+                        }
+                    })
+            );
+            }
+            Promise.all(promises).then(() => {
+                if (!found) {
+                    return;
+                }
+                if (num>=9){
+
+                    NumberOfProductsInCart1.style="width: 21px;height: 21px;margin-top: 18px;right:37px;"
+                }
+                if (num>=25){
+
+                    alert("No more than 25 products!")
+                    return;
+                }
+                sha256("numofproductsis" + (num+1)).then(hash => {
+                    document.cookie = `NumberOfProducts=${hash};expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+                });
+                /////////////////////////
+                promises.length = 0;
+                const regexPattern = new RegExp(`${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png")}=[0-9a-fA-F]+`);
+                const NumberOfProductsSpecificToProduct = (document.cookie.match(regexPattern)).toString().split("=")[1].toString();
+                let cookieValue2;
+                let num1;
+                for(let i=1; i <= 25; i++){
+
+                    promises.push(
+                        sha256("numofproductsis" + i).then(hash => {
+                            if (hash.toString()==NumberOfProductsSpecificToProduct.toString()){
+
+                                num1 = i;
+                            }
+                        })
+                    )
+                }
+                Promise.all(promises).then(() => {
+
+                    promises.length = 0;
+                    promises.push(
+                        sha256("numofproductsis" + (num1+1)).then(hash1 => {
+                            cookieValue2 = `${encodeURIComponent("https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png")}=${hash1}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+                        })
+                    )
+                    Promise.all(promises).then(() => {
+
+                        document.cookie = cookieValue2;
+                        var imagefound = false;
+                        for(var t=0;t<25;t++){
+
+                            if (document.getElementsByClassName("imageincart")[t].src=="https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png"){
+
+                                document.getElementsByClassName("imageincart")[t].parentElement.getElementsByClassName("numofspecificproductincart")[0].innerHTML = num1+1;
+                                imagefound = true;
+                            }
+                        }
+                        if (imagefound==false){
+                            for(let i=0;i<25;i++){
+
+                                if (document.getElementsByClassName("imageincart")[i].src==""){
+
+                                    document.getElementsByClassName("imageincart")[i].src=="https://raw.githubusercontent.com/BlackWolfJR/1/main/1.png";
+                                    document.getElementsByClassName("imageincart")[i].parentElement.getElementsByClassName("numofspecificproductincart")[0].innerHTML = num1+1;
+                                    break;
+                                }
+                            }
+                        }
+                    })
+                    
+                })
+                /////////////////////////
+                NumberOfProductsInCart1.innerHTML = num+1;
+            });
+        }
+        var cartOpen = false;
+        function CartClick() {
+            if (cartOpen) {
+                document.getElementById("CartFrame").style.display = "none";
+                cartOpen = false;
+            } else {
+                document.getElementById("CartFrame").style.display = "block";
+                cartOpen = true;
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="c1">
+        <img id="logo" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/bolas123.png" alt="Failed to Display Logo"></img>
+        <a id="Products" href="https://blackwolfjr.github.io/home/">Products</a>
+        <a id="AboutUs" href="https://blackwolfjr.github.io/AboutUs/">About Us</a>
+        <a id="ContactUs" href="https://blackwolfjr.github.io/ContactUs/">Contact Us</a>
+        <input id="SearchBar" type="text" placeholder="Search for product..">
+        <a id="SignIn" href="https://blackwolfjr.github.io/SignIn/">Sign In</a>
+        <button onclick="CartClick()" id="Cart"><img src="https://raw.githubusercontent.com/BlackWolfJR/1/main/cart.png" style="width: 64px;height: 64px;"></img><div id="NumberOfProductsInCart">0</div></button>
+    </div>
+    <div id="CartFrame" style="display: none;box-shadow: 0 0 15px rgb(1, 0, 26);position: fixed;background-color: white;right:0px;height: 100vh;width:275px;border-radius:10px;border:2px solid rgb(1, 0, 26);z-index: 1;margin-top:93px;"><div style="justify-content: center;background-color: rgb(1,0,26);padding-top: 25px;box-shadow: 0 0 2px rgb(1, 0, 26);width: 100%;text-align: center;text-shadow: 0 0 5px black;">
+        <span style="position: relative;bottom: 12px;font-size: 25px;display: block;font-family:Bold;color:white;text-shadow: 0 0 5px black;">My Cart</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+        <div class="productincart" style="display:none;margin:5px;box-shadow: 0 0 2px rgb(1, 0, 26);width:95%;height:65px;"><img class="imageincart" src="" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span class="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
+    </div>
+    <hr style="box-shadow:0 0 1px black;border:1px solid rgb(1,0,26);margin:115px 20px;height: 0;width: 97%;position: absolute;">
+    <div id="container">
+        <img onmouseover="changeimage1()" id="img1" src="1.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img onmouseover="changeimage2()" id="img2" src="2.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img onmouseover="changeimage3()" id="img3" src="3.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img onmouseover="changeimage4()" id="img4" src="4.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img onmouseover="changeimage5()" id="img5" src="5.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img onmouseover="changeimage6()" id="img5" src="6.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+    </div>
+    <div id="u1">
+        <img id="product" style="width:452px;height:435px;" src="1.jpg"></img>
+        <div id="productinfo">
+            <span id="productname">MILEILUOYUE Nail Clippers Set Black Stainless Steel Nail Cutter& Sharp Oblique Toe Nail Clipper & Nail File 4 Pieces, Metal tin Box for Men and Women Suitable for Gifts.</span>
+            <hr><span id="InStock" style="color:green;font-size: 26px;">In Stock</span></hr>
+            <span style="margin-left: 20px" class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <p style="display: inline;margin-left: 5px;font-size: 20px;color:rgb(1,0,26)">3.1</p>
+            <p style="display: inline;margin-left: 30px;font-size: 20px;color:rgb(1,0,26)">124 Ratings</p>
+            <span id="price">$9.99</span>
+            <img src="https://raw.githubusercontent.com/BlackWolfJR/1/main/paypalimage.png">
+            <button onclick="AddToCart()" id="AddToCart">Add To Cart</button>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="T5X7V358F7CEL">
+                <button id="Buy">Buy Now</button>
+            </form> 
+            <p style="margin:10px 0;font-size: 16px;color:rgb(6, 0, 190);">No Import Fees Deposit & Deliveries may take a few days</p>
+        </div>
+    </div>
+    <div id="u2">
+        <h1 style="margin:-5px 0;text-align:center;font-size: 22px;color:rgb(1,0,26);font-size: 22px;color:rgb(1,0,26);font-family: sans-serif;">About this Product</h1>
+        <hr style="margin:10px 0;"></hr>
+        <ul>
+            <li style="font-size: 18px;">Comprehensive manicure tool: MILEILUOYUE nail clipper set includes Straight mouth large nail clippers and arc mouth medium nail clippers & oblique nail clippers & nail files, all-round to meet your manicure needs, equipped with black matte tin box, convenient storage, reflecting the perfect texture .</li>
+            <li style="margin-top:8px;font-size: 18px;">Precision stainless steel: Made of high-precision and sturdy stainless steel, the blade is sharp and easy to cut, the blade is not easy to wear, durable, and the nail file trims the sharp edge of the nail to prevent uneven nail growth.</li>
+            <li style="margin-top:8px;font-size: 18px;">Ergonomics: Nail clippers add a long handle design, easier to trim nail clippers, lever black matte non-slip design to prevent slippage and breakage, helping you better trim your nails for optimal accuracy and control.</li>
+            <li style="margin-top:8px;font-size: 18px;">Function and packaging: Ultra-sharp cutting edge precision cutting, finger and toe independent special tools, effectively avoiding the spread and infection of bacteria. Black matte tin box, beautiful appearance, excellent quality, family, travel, outdoor, gifts, the perfect tool for men and women.</li>
+            <li style="margin-top:8px;font-size: 18px;">Perfect after-sales service: The nail clipper set guarantees a lifetime replacement warranty to ensure the full benefit of each customer. Your purchase is protected by Amazon and supported by MILEILUOYUE.</li>
+        </ul>
+        <img src="7.jpg" style="width:970px;height:300px;box-shadow:0 0 1px black;"></img>
+        <img src="8.jpg" style="width:970px;height:300px;box-shadow:0 0 1px black;"></img>
+        <img src="9.jpg" style="width:970px;height:300px;box-shadow:0 0 1px black;"></img>
+        <h1 style="text-align:center;font-size: 22px;color:rgb(1,0,26);font-size: 22px;color:rgb(1,0,26);font-family: sans-serif;">Specifications</h1>
+        <hr style="margin:-10px 0;"></hr>
+        <div style="background-color: azure;position: absolute;width:50%;margin-top:20px;box-shadow: 0px 0 2px black;">
+            <div style="display:flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
+                <p style="font-size: 19px;">Brand</p>
+            </div>
+            <div style="display:flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
+                <p style="font-size: 19px;">Color</p>
+            </div>
+        </div>
+        <div style="background-color: wheat;position: absolute;width:50%;margin-top:20px;box-shadow: 0px 1px 2px black;margin-left:50%">
+            <div style="display:flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
+                <p style="font-size: 19px;">MILEILUOYUE</p>
+            </div>
+            <div style="display:flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
+                <p style="font-size: 19px;">Black</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
