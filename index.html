@@ -305,7 +305,7 @@
     <script>
         window.addEventListener("load", function(){
             const productid = window.location.href.split("-p-")[1].replace("/", "")
-            fetch("https://backend-6eeb.onrender.com/", {headers: {"Content-Type": "application/json"}, method:"POST", body: JSON.stringify({"Action": "Get Product Details", "PID":productid})}).then(response=>response.json()).then(data=>{document.getElementById("desc").innerHTML = data.data.description;document.getElementById("price").innerHTML = "$"+data.data.sellPrice+"0";console.log(data.data.productNameEn);document.getElementById("productname").innerHTML = data.data.productNameEn;document.getElementById("product").src = data.data.productImageSet[0];for (let i = 0;i<=data.data.productImageSet.length;i++){console.log(i);document.getElementById("img"+i).src = data.data.productImageSet[i]};if (data.data==undefined){return} if (data.data.listedNum>0){document.getElementById("InStock").style.color = "green"; document.getElementById("InStock").innerHTML = "In Stock"}else {document.getElementById("InStock").style.color = "red"; document.getElementById("InStock").innerHTML = "Out of Stock"}})
+            fetch("https://backend-6eeb.onrender.com/", {headers: {"Content-Type": "application/json"}, method:"POST", body: JSON.stringify({"Action": "Get Product Details", "PID":productid})}).then(response=>response.json()).then(data=>{document.getElementById("desc").innerHTML = data.data.description;document.getElementById("price").innerHTML = "$"+data.data.sellPrice+"0";console.log(data.data.productNameEn);document.getElementById("productname").innerHTML = data.data.productNameEn;document.getElementById("product").src = data.data.productImageSet[0];for (let i = 0;i<=data.data.productImageSet.length;i++){document.getElementById("img"+i).style.display = "block";document.getElementById("img"+i).src = data.data.productImageSet[i]};if (data.data==undefined){return} if (data.data.listedNum>0){document.getElementById("InStock").style.color = "green"; document.getElementById("InStock").innerHTML = "In Stock"}else {document.getElementById("InStock").style.color = "red"; document.getElementById("InStock").innerHTML = "Out of Stock"}})
         })
         var cartOpen = false;
         function CartClick() {
@@ -363,12 +363,12 @@
     </div>
     <hr style="box-shadow:0 0 1px black;border:1px solid rgb(1,0,26);margin:115px 20px;height: 0;width: 97%;position: absolute;">
     <div id="container">
-        <img id="img0" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img id="img1" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img id="img2" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img id="img3" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img id="img4" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img id="img5" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img id="img0" src="big.png" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img id="img1" src="big.png" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img id="img2" src="big.png" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img id="img3" src="big.png" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img id="img4" src="big.png" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img id="img5" src="big.png" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
     </div>
     <div id="u1">
         <img id="product" style="width:452px;height:435px;" src="https://raw.githubusercontent.com/BlackWolfJR/1/main/big.png"></img>
