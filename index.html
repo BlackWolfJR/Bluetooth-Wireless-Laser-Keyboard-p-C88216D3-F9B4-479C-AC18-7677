@@ -305,7 +305,6 @@
     <script>
         window.addEventListener("load", function(){
             const productid = window.location.href.split("-p-")[1].replace("/", "")
-            console.log(productid);
             fetch("https://backend-6eeb.onrender.com/", {headers: {"Content-Type": "application/json"}, method:"POST", body: JSON.stringify({"Action": "Get Product Details", "PID":productid})}).then(response=>response.json()).then(
                 data=>{
                     if (data.data==undefined){return}
@@ -317,6 +316,11 @@
                     for (let i = 0;i<data.data.productImageSet.length;i++){
                         document.getElementById("img"+i).style.display = "block";
                         document.getElementById("img"+i).src = data.data.productImageSet[i]
+                        document.getElementById("img"+i).onmouseover = function(){
+                            let imageproduct = document.getElementById("product");
+                            imageproduct.style="width:452px;height:435px;";
+                            imageproduct.src = data.data.productImageSet[i];
+                        }
                     };
                     if (data.data.listedNum>0){
                         document.getElementById("InStock").style.color = "green";
@@ -384,7 +388,7 @@
     </div>
     <hr style="box-shadow:0 0 1px black;border:1px solid rgb(1,0,26);margin:115px 20px;height: 0;width: 97%;position: absolute;">
     <div id="container">
-        <img id="img0" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
+        <img onmousewheel="" id="img0" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
         <img id="img1" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
         <img id="img2" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
         <img id="img3" style="display:none;width:65px;height:65px;box-shadow:0 0 1px black;"></img>
