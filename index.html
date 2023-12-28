@@ -304,13 +304,13 @@
     </style>
     <script>
         function IdentifyPricePattern(productprice){
-            console.log(productprice);
-            console.log(productprice.split(".")[1]);
             if (!productprice.includes("-")){
                 if (productprice.split(".")[1].length==1 && productprice.length==3){
-                    console.log("$"+productprice+"0");
                     return "$"+productprice+"0";
                 }
+            }
+            else{
+                return "$"+productprice;
             }
         }
         window.addEventListener("load", function(){
