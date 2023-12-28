@@ -307,7 +307,7 @@
 
             if (!productprice.includes("-")){
                 if (productprice.split(".")[1].length==1 && productprice.length==3){
-                    document.getElementById("price").textContent = "$"+productprice+"0";
+                    return "$"+productprice+"0";
                 }
             }
         }
